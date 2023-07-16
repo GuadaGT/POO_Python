@@ -1,22 +1,18 @@
-class Alumno:
-    def __init__(self, nombre, nota):
-        self.nombre = nombre
-        self.nota = nota
+class Vehículo:
+    def __init__(self, color, ruedas, puertas):
+        self.color = color
+        self.ruedas = ruedas
+        self.puertas = puertas
 
-    def info_alumno(self):
-        print("Nombre:", self.nombre)
-        print("Nota:", self.nota)
+class Coche(Vehículo):
+    def __init__(self, color, ruedas, puertas, velocidad, cilindrada):
+        super().__init__(color, ruedas, puertas)
+        self.velocidad = velocidad
+        self.cilindrada = cilindrada
 
-    def resultado_alumno(self):
-        if self.nota >= 5:
-            print("¡Enhorabuena!", self.nombre, "ha aprobado con un", self.nota, "de nota final.")
-        else:
-            print("Lo lamento.", self.nombre, "ha suspendido con un", self.nota, "de nota final.")
-
-a1 = Alumno("Laura", 8)
-a1.info_alumno()
-a1.resultado_alumno()
-
-a2 = Alumno("Gloria", 4.5)
-a2.info_alumno()
-a2.resultado_alumno()
+coche = Coche("Verde", 4, 5, 200, 5100)
+print("Color:", coche.color)
+print("Ruedas:", coche.ruedas)
+print("Puertas:", coche.puertas)
+print("Velocidad:", coche.velocidad)
+print("Cilindrada:", coche.cilindrada)
